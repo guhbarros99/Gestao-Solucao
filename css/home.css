@@ -50,7 +50,6 @@ body {
 
 .logo img {
     height: 40px;
-    /* Ajuste o tamanho da sua logo */
     border-radius: 50%;
 }
 
@@ -176,18 +175,84 @@ body {
 
 /* --- Main Content --- */
 .main-content {
-    width: 1173;
-    height: 200;
+    max-width: 800px;
+    margin: 40px auto;
     padding: 20px;
-    overflow-y: auto;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
+.main-content ul {
+    list-style: none;
+    padding: 0;
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.main-content li {
+    flex: 1 1 calc(33% - 20px);
+    border-radius: 10px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+    cursor: pointer; /* cursor de link */
+    padding: 0; /* padding agora no <a> */
+}
+
+.main-content li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.main-content li a {
+    display: flex; /* ocupa todo o li */
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #91A1A8 0%, #113048 100%);
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background 0.2s;
+    text-align: center;
+}
+
+.main-content li a:hover {
+    background: linear-gradient(90deg, #5b7c8d 0%, #0f2433 100%);
+}
+
+/* Botão Adicionar módulo */
+.main-content a[href*="Adicionarmodulo.php"] {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 24px;
+    background-color: #1890ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.main-content a[href*="Adicionarmodulo.php"]:hover {
+    background-color: #40a9ff;
+}
+
+/* --- Cards placeholder --- */
 .card {
     background: linear-gradient(90deg, #91A1A8 0%, #113048 100%);
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.50);
+    box-shadow: 0 4px 4px rgba(0,0,0,0.5);
     border: 1px solid #000;
 }
 
@@ -195,7 +260,6 @@ body {
     font-size: 20px;
     margin-bottom: 15px;
     font-weight: 500;
-    padding-bottom: 10px;
 }
 
 .card p {
@@ -211,7 +275,92 @@ body {
 
 .card.placeholder {
     min-height: 150px;
-    /* Mesma altura aproximada dos outros cards */
+}
+
+/* --- Responsividade para telas pequenas --- */
+@media (max-width: 768px) {
+    .search-bar {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .main-content ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .main-content li {
+        flex: 1 1 100%;
+    }
+}
+
+/* Container que organiza os cards em uma grade responsiva, como uma tabela */
+.cards-table {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha em telas menores */
+  gap: 2px; /* Espaço mínimo entre os "células" da tabela */
+  border: 1px solid #333; /* Borda da tabela com cor mais escura */
+  border-radius: 8px;
+  overflow: hidden; /* Garante que os cantos arredondados sejam mantidos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: #222;
+}
+
+/* Estilo para cada "célula" da tabela */
+.card {
+  flex: 1 1 250px; /* Cresce e encolhe, com largura base de 250px */
+  background-color: #444;
+  padding: 15px;
+  border-right: 1px solid #333; /* Divisor vertical entre os cards */
+  border-bottom: 1px solid #333; /* Divisor horizontal para a última linha */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff; /* Cor do texto padrão para branco */
+}
+
+/* Título de cada card (cabeçalho da "coluna") */
+.card h3 {
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 1.1em;
+  color: white; /* Cor do título para branco */
+  font-weight: bold;
+  border-bottom: 2px solid #0056b3;
+  text-transform: uppercase;
+}
+
+/* Estilo para os dados (linhas da "tabela") */
+.card p {
+  margin: 0;
+  padding: 8px 0;
+  color: #ddd; /* Cor do texto dos dados para um branco mais suave */
+  border-bottom: 1px solid #0056b3; /* Divisor de linha entre os dados */
+}
+
+/* Remove a borda inferior do último dado de cada card */
+.card p:last-of-type {
+  border-bottom: none;
+}
+
+/* Estilo para o link de ação */
+.card a {
+  display: block;
+  width: 100%; /* Ocupa a largura total da "célula" */
+  padding: 10px;
+  margin-top: auto; /* Empurra o link para o final do card */
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.card a:hover {
+  background-color: #0056b3;
 }
 
 .menu-icon i:hover {
