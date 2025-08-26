@@ -121,9 +121,7 @@ if (isset($_GET['id'])) {
                     </div>
                 <?php endforeach; ?>
             </div>
-
-
-
+ 
             <!-- adicionar campo -->
 
             <?php if (isset($_GET['id'])): ?>
