@@ -65,23 +65,22 @@ if (isset($_GET['id'])) {
     <div class="container">
         <header class="header">
             <div class="logo">
-                <img src="../img-back-end/logomarca1.png" alt="Logo">
+                <a href="configuracao.html"><img src="../img-back-end/logomarca1.png" alt="Logo"></a>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
+            <div class="title">
+                <h1>Gestão & Solução</h1>
             </div>
             <div class="search-bar">
                 <i class="fas fa-search"></i>
                 <input type="text" placeholder="Pesquisa">
             </div>
-            <div class="title">
-                <h1>Gestão & Solução</h1>
-            </div>
+
             <div class="menu-icon">
                 <a href="informacoes.html"><i class="fa fa-info-circle"></i></a>
-                <a href="configuracao.html"><i class="ai-settings-horizontal"></i> </a>
             </div>
-            <a href="acoes/sair.php"><button>Sair</button></a>
         </header>
 
         <aside class="sidebar">
@@ -121,7 +120,7 @@ if (isset($_GET['id'])) {
                     </div>
                 <?php endforeach; ?>
             </div>
- 
+
             <!-- adicionar campo -->
 
             <?php if (isset($_GET['id'])): ?>
@@ -135,6 +134,14 @@ if (isset($_GET['id'])) {
 
         </main>
     </div>
+    <script>
+        const toggleBtn = document.querySelector(".menu-toggle");
+        const sidebar = document.querySelector(".sidebar");
+
+        toggleBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+        });
+    </script>
 
 </body>
 

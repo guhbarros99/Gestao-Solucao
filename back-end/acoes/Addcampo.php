@@ -67,6 +67,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <option value="2">2</option>
             <option value="3">3</option>
         </select>
+        <label for="tela">Tela:</label>
+        <select name="tela" id="tela">
+            <option value="graficos">Graficos</option>
+            <option value="agenda">Agenda</option>     
+            <option value="tabela">Tabela</option>     
+        </select>
 
         <label for="cor">Cor:</label>
         <input type="color" id="cor" name="cor">

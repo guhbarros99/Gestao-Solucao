@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <input hidden name="id_empresa" value="<?=$_SESSION['id_empresa']; ?>">
 
-        <input type="submit" value="Adicionar Modulo">
+        <button type="submit" value="Adicionar Modulo">Adicionar Modulo</button>
 
     </form>
 
