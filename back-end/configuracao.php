@@ -93,13 +93,13 @@ $logoPath = ($logo && file_exists($logo->getCaminho()))
 
 
                     <div class="profile-text">
-                        <span class="profile-name">Freedom</span>
-                        <span class="profile-email">freedom@gmail.com</span>
+                        <span class="profile-name"><?= $empresa->getNome(); ?></span>
+                        <span class="profile-email"><?= $empresa->getEmail(); ?></span>
                     </div>
                 </div>
                 <a href="atualizatLogo.php"><button class="edit-button">
-                    <i class="fas fa-pencil-alt"></i> Editar imagem
-                </button></a>
+                        <i class="fas fa-pencil-alt"></i> Editar imagem
+                    </button></a>
             </div>
 
 
@@ -112,17 +112,15 @@ $logoPath = ($logo && file_exists($logo->getCaminho()))
                     <label for="gmail">Email</label>
                     <input type="text" name="gmail" value="<?= $empresa->getEmail(); ?>" class="input-field">
                 </div>
-                 <div class="form-group">
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha" value="<?= $empresa->getSenha(); ?>" class="input-field">
+                <div class="form-group">
+                    <label for="gmail">Area de Atuação</label>
+                    <input type="text" name="gmail" value="<?= $empresa->getEmail(); ?>" class="input-field">
                 </div>
-
                 <button type="submit" class="save-button">Salvar</button>
-
             </form>
             <div class="button-group">
                 <a href="home.php"><i class="back">Voltar</i></a>
-                <a href="acoes/sair.php"><i class="ai-door">Sair</i></a>    
+                <a href="acoes/sair.php"><i class="ai-door">Sair</i></a>
             </div>
     </div>
 
