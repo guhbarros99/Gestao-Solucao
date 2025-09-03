@@ -327,3 +327,9 @@ label {
     flex-shrink: 0;
     color: #91A1A8e1;
 }
+.color-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}

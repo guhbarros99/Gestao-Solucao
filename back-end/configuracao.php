@@ -113,9 +113,14 @@ $logoPath = ($logo && file_exists($logo->getCaminho()))
                     <input type="text" name="gmail" value="<?= $empresa->getEmail(); ?>" class="input-field">
                 </div>
                 <div class="form-group">
-                    <label for="gmail">Area de Atuação</label>
-                    <input type="text" name="gmail" value="<?= $empresa->getEmail(); ?>" class="input-field">
+                    <label for="CNPJ">CNPJ</label>
+                    <input type="text" name="CNPJ" value="<?= $empresa->getcnpj(); ?>" class="input-field">
                 </div>
+                <div class="color-option">
+                    <div class="color-box secondary" data-color="secondary"></div>
+                    <label>Cor Secundária</label>
+                </div>
+            </div>
                 <button type="submit" class="save-button">Salvar</button>
             </form>
             <div class="button-group">
@@ -124,18 +129,6 @@ $logoPath = ($logo && file_exists($logo->getCaminho()))
             </div>
     </div>
 
-    <!-- <button class="save-button">
-    <i class="fas fa-pencil-alt"></i> Salvar
-</button>
-
-        </main>
-    </div>
-
-    <footer class="footer">
-        <p>&copy; 2025 Freedom. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="../js/configuracao.js"></script> -->
 </body>
 
 </html>

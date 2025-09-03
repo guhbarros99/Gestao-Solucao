@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <button type="submit">Cadastrar</button>
         <a href="Login.php">Login</a>
-        <a href="/Gestao-Solucao-main/front-end/index.html">Voltar</a>
+        <a href="/Gestao-Solucao/front-end/index.html">Voltar</a>
     </form>
     
 
